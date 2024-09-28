@@ -19,10 +19,6 @@ In `/etc/dnf/dnf.conf` add:
 fastestmirror=True
 ```
 
-## Font with ligatures
-https://www.nerdfonts.com/font-downloads
-FiraCode Nerd Font, regular
-(Not used)
 
 ## gnome plugin
 TODO
@@ -33,14 +29,15 @@ tilix
 
 ### Shell
 Install Fish and set it as default shell
-```
+```bash
 sudo dnf install fish
 chsh -s /usr/bin/fish
 ```
 
 ### Shell Prompt
 #### Install starship
-```
+No need to install a font with ligature as specified in documentation
+```bash
 sudo dnf install cargo
 sudo dnf install g++
 sudo dnf install cmake
@@ -50,7 +47,7 @@ fish_add_path /home/max/.cargo/bin/
 
 #### Source starship
 In `~/.config/fish/config.fish` add:
-```
+```bash
 starship init fish | source
 ```
 
@@ -63,14 +60,34 @@ Copy starship.toml at `~/.config/starship.toml`
 sudo dnf install fzf
 ```
 #### Integration with fish
+```bash
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+sudo dnf install bat
+sudo dnf install fd-find
+fisher install PatrickF1/fzf.fish
 ```
+/!\ Not fully working
 
+### Git and Github
+#### SSH key for github
+[How to generate the key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+```bash
+# create the key and put it the following path: ~/.ssh/github_key
+ssh-keygen -t ed25519 -C "your_email@example.com"
+# ssh-agent is started by default on fedora 40
+# Add the key to the ssh-agent
+ssh-add ~/.ssh/github_key
+# Add the public key to github
+# Try the connection to github
+ssh -T git@github.com
 ```
-
-### SSH key
-https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-
-TODO ssh-agent
+#### config
+```bash
+# set user name and mail
+git config --global user.name "JackHerRrer"
+git config --global user.mail "my@mail.com"
+```
 
 ### Bat: colored cat
 
