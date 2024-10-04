@@ -104,6 +104,15 @@ https://code.visualstudio.com/docs/setup/linux
 
 ## To be explored
 - firaCode
-
+- ColorLs
+- pager : most
+- nvim
+- tree
+- notifications
+- alias g git
+- suggest aliases
+- git config aliases
+- alias install="sudo dnf install"
+- https://github.com/jorgebucaran/awsm.fish?tab=readme-ov-file#plugins
 
 
