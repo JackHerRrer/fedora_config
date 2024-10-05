@@ -102,6 +102,38 @@ git config --global user.mail "my@mail.com"
 ## VsCode
 https://code.visualstudio.com/docs/setup/linux
 
+## Gnome
+### Plugins
+Install the `extension manager`
+
+Add the following plugins:
+```
+- clipboard indicator
+- Tiling assistant
+- Dash to panel
+```
+
+#### Dash to panel configuration 
+position
+    Panel on the left
+    bouton activités caché
+
+style
+    style de l'indicateur d'activité (application active) -> Traits 
+        surligner l'application active
+        opacité du surlignement -> 40
+    style de l'indicateur d'activité (application inaactive) -> traits 
+    remplacer l'opacité du panneaur 
+    opacité du fond du panneau -> 60
+
+comportement
+    afficher les apercu de fenêtre lors du survol
+        taille des prévisualisation de fenêtre -> 500
+    Isoler les espaces de travail
+
+
+
+
 ## To be explored
 - firaCode
 - ColorLs
@@ -114,5 +146,7 @@ https://code.visualstudio.com/docs/setup/linux
 - git config aliases
 - alias install="sudo dnf install"
 - https://github.com/jorgebucaran/awsm.fish?tab=readme-ov-file#plugins
+- ranger command
+- tldr command
 
 
