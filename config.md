@@ -19,13 +19,11 @@ In `/etc/dnf/dnf.conf` add:
 fastestmirror=True
 ```
 
-
-## gnome plugin
-TODO
-
 ## Terminal configuration
 ### Terminal emulator
-tilix
+```
+sudo dnf install tilix-nautilus-x.x.x
+```
 
 ### Shell
 Install Fish and set it as default shell
@@ -91,8 +89,31 @@ git config --global user.mail "my@mail.com"
 
 ### Bat: colored cat
 
-### colored IP
+### eza : ls replacement
+```
+sudo dnf install eza
+```
 
+### Abreviations
+
+Add in `~/.config/fish/config.fish` the following abbreviations
+```bash
+# abbreviations
+abbr --add cat batcat --style plain --paging never
+abbr --add ip ip -c
+abbr --add ip6 ip -c -6
+abbr --add grep grep --color=auto
+abbr --add fgrep fgrep --color=auto
+abbr --add egrep egrep --color=auto
+abbr --add ll eza -alh --git --icons=always 
+abbr --add l eza --icons=always 
+abbr --add install sudo dnf install
+```
+
+Then source it 
+```bash
+source ~/.config/fish/config.fish
+```
 
 ## Firefox
 ### Plugins
@@ -132,21 +153,17 @@ comportement
     Isoler les espaces de travail
 
 
-
-
 ## To be explored
 - firaCode
-- ColorLs
 - pager : most
 - nvim
-- tree
 - notifications
 - alias g git
 - suggest aliases
 - git config aliases
-- alias install="sudo dnf install"
 - https://github.com/jorgebucaran/awsm.fish?tab=readme-ov-file#plugins
 - ranger command
 - tldr command
+- Nautilise extensions
 
 
