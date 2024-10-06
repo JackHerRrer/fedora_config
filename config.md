@@ -124,6 +124,11 @@ source ~/.config/fish/config.fish
 https://code.visualstudio.com/docs/setup/linux
 
 ## Gnome
+
+### Add minimize / maximize button
+```bash
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+```
 ### Plugins
 Install the `extension manager`
 
