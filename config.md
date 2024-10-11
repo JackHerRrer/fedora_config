@@ -25,6 +25,8 @@ fastestmirror=True
 sudo dnf install tilix-nautilus-x.x.x
 ```
 
+TODO Add configuration
+
 ### Shell
 Install Fish and set it as default shell
 ```bash
@@ -36,16 +38,18 @@ chsh -s /usr/bin/fish
 #### Install starship
 No need to install a font with ligature as specified in documentation
 ```bash
-sudo dnf install cargo
-sudo dnf install g++
-sudo dnf install cmake
+# install dependencies to build it
+sudo dnf install cargo g++ cmake
+# build/install starship
 cargo install starship --locked
+# Add binaries build with cargo in path
 fish_add_path /home/max/.cargo/bin/
 ```
 
 #### Source starship
 In `~/.config/fish/config.fish` add:
 ```bash
+# Use starship as prompt
 starship init fish | source
 ```
 
@@ -80,6 +84,7 @@ ssh-add ~/.ssh/github_key
 # Try the connection to github
 ssh -T git@github.com
 ```
+
 #### config
 ```bash
 # set user name and mail
@@ -88,10 +93,29 @@ git config --global user.mail "my@mail.com"
 ```
 
 ### Bat: colored cat
+```
+sudo dnf install bat 
+```
 
 ### eza : ls replacement
 ```
 sudo dnf install eza
+```
+
+### tldr: man replacement
+```
+sudo dnf install tldr
+```
+
+### zoxide: cd replacement
+```
+sudo dnf install zoxide
+```
+
+Add in `~/.config/fish/config.fish` the following abbreviations
+```bash
+# Add zoxide hotkeys 
+zoxide init fish | source
 ```
 
 ### Abreviations
@@ -99,7 +123,7 @@ sudo dnf install eza
 Add in `~/.config/fish/config.fish` the following abbreviations
 ```bash
 # abbreviations
-abbr --add cat batcat --style plain --paging never
+abbr --add cat bat --style plain --paging never
 abbr --add ip ip -c
 abbr --add ip6 ip -c -6
 abbr --add grep grep --color=auto
@@ -122,6 +146,10 @@ source ~/.config/fish/config.fish
 
 ## VsCode
 https://code.visualstudio.com/docs/setup/linux
+
+
+## Bottles 
+Its a wine GUI
 
 ## Gnome
 
@@ -159,8 +187,7 @@ comportement
 
 
 ## To be explored
-- firaCode
-- pager : most
+- pager : most/bat
 - nvim
 - notifications
 - alias g git
@@ -168,7 +195,6 @@ comportement
 - git config aliases
 - https://github.com/jorgebucaran/awsm.fish?tab=readme-ov-file#plugins
 - ranger command
-- tldr command
-- Nautilise extensions
+- Nautilis extensions
 
 
