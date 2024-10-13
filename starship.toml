@@ -4,6 +4,10 @@ format = """$directory$time$character"""
 # Move the rest of the prompt to the right
 right_format = """$all"""
 
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
