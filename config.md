@@ -185,6 +185,8 @@ comportement
         taille des prévisualisation de fenêtre -> 500
     Isoler les espaces de travail
 
+## wallpaper
+https://backiee.com/static/wallpapers/7680x4320/219980.jpg
 
 ## To be explored
 - pager : most/bat
@@ -196,5 +198,6 @@ comportement
 - https://github.com/jorgebucaran/awsm.fish?tab=readme-ov-file#plugins
 - ranger command
 - Nautilis extensions
-
-
+- https://github.com/Jackett/Jackett 
+- https://github.com/qbittorrent/search-plugins
+- fd https://github.com/sharkdp/fd?tab=readme-ov-file
