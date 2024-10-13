@@ -118,6 +118,13 @@ Add in `~/.config/fish/config.fish` the following abbreviations
 zoxide init fish | source
 ```
 
+### ranger
+```
+sudo dnf install ranger
+```
+
+TODO config
+
 ### Abreviations
 
 Add in `~/.config/fish/config.fish` the following abbreviations
@@ -196,7 +203,6 @@ https://backiee.com/static/wallpapers/7680x4320/219980.jpg
 - suggest aliases
 - git config aliases
 - https://github.com/jorgebucaran/awsm.fish?tab=readme-ov-file#plugins
-- ranger command
 - Nautilis extensions
 - https://github.com/Jackett/Jackett 
 - https://github.com/qbittorrent/search-plugins
