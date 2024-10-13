@@ -27,11 +27,24 @@ sudo dnf install tilix-nautilus-x.x.x
 
 TODO Add configuration
 
-### Shell
+### Fish Shell
+#### Installation
 Install Fish and set it as default shell
 ```bash
 sudo dnf install fish
 chsh -s /usr/bin/fish
+```
+
+#### Extension
+Install extension manager
+```bash
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+```
+
+Install the extensions 
+```bash
+# Add colorization on man pages
+fisher install decors/fish-colored-man
 ```
 
 ### Shell Prompt
@@ -192,8 +205,29 @@ comportement
         taille des prévisualisation de fenêtre -> 500
     Isoler les espaces de travail
 
-## wallpaper
+## Wallpaper
 https://backiee.com/static/wallpapers/7680x4320/219980.jpg
+
+## Torrent 
+- install qbitorrent
+- install qbitorrent search plugins [explanations here](https://github.com/qbittorrent/search-plugins/wiki/Install-search-plugins) 
+    - enable search view: `view -> search engine`  
+    - Check updates in the search plugins (this enable default search engines)
+
+- Add Jackett to have a way better search [explanations here](https://github.com/qbittorrent/search-plugins/wiki/How-to-configure-Jackett-plugin)
+    - install jackett
+        ```bash
+        sudo dnf install dotnet
+
+        # install jackett
+        # from https://github.com/Jackett/Jackett#installation-on-linux-amdx64
+        cd /opt && f=Jackett.Binaries.LinuxAMDx64.tar.gz && sudo wget -Nc https://github.com/Jackett/Jackett/releases/latest/download/"$f" && sudo tar -xzf "$f" && sudo rm -f "$f" && cd Jackett* && sudo chown $(whoami):$(id -g) -R "/opt/Jackett" && sudo ./install_service_systemd.sh && systemctl status jackett.service && cd - && echo -e "\nVisit http://127.0.0.1:9117"
+        ```
+    - Open the local server : http://127.0.0.1:9117
+    - Add indexers
+    - copy the jackett's api key
+    - add the api key of jackett in qbitorrent conf `~/.var/app/org.qbittorrent.qBittorrent/data/qBittorrent/nova3/engines/jackett.json`
+
 
 ## To be explored
 - pager : most/bat
@@ -204,6 +238,4 @@ https://backiee.com/static/wallpapers/7680x4320/219980.jpg
 - git config aliases
 - https://github.com/jorgebucaran/awsm.fish?tab=readme-ov-file#plugins
 - Nautilis extensions
-- https://github.com/Jackett/Jackett 
-- https://github.com/qbittorrent/search-plugins
 - fd https://github.com/sharkdp/fd?tab=readme-ov-file
