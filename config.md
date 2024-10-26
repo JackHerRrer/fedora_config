@@ -21,7 +21,7 @@ fastestmirror=True
 
 ## Terminal configuration
 ### Terminal emulator
-```
+```bash
 sudo dnf install tilix-nautilus-x.x.x
 ```
 
@@ -71,7 +71,7 @@ Copy starship.toml at `~/.config/starship.toml`
 
 ### Fuzzy search
 #### Install
-```
+```bash
 sudo dnf install fzf
 ```
 #### Integration with fish
@@ -100,9 +100,14 @@ ssh -T git@github.com
 
 #### config
 ```bash
-# set user name and mail
+# set user name and mail and default editor 
 git config --global user.name "JackHerRrer"
-git config --global user.mail "my@mail.com"
+git config --global user.email "my@mail.com"
+git config --global core.editor 'code --wait'
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 ```
 
 ### Bat: colored cat
@@ -185,6 +190,14 @@ Add the following plugins:
 - clipboard indicator
 - Tiling assistant
 - Dash to panel
+```
+
+### Hotkeys
+Setting -> keyboards -> customize hotkeys
+
+```
+navigation -> go to workspace on the right: ctrl + super + right
+navigation -> go to workspace on the left: ctrl + super + left
 ```
 
 #### Dash to panel configuration 
