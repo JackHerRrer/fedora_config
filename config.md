@@ -172,6 +172,7 @@ source ~/.config/fish/config.fish
 ## VsCode
 https://code.visualstudio.com/docs/setup/linux
 
+Add the vscode profiles from this repository 
 
 ## Bottles 
 Its a wine GUI
