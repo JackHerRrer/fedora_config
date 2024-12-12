@@ -251,5 +251,7 @@ https://backiee.com/static/wallpapers/7680x4320/219980.jpg
 - suggest aliases
 - git config aliases
 - https://github.com/jorgebucaran/awsm.fish?tab=readme-ov-file#plugins
-- Nautilis extensions
+- Nautilus extensions
 - fd https://github.com/sharkdp/fd?tab=readme-ov-file
+- yazi : https://github.com/sxyazi/yazi
+- superfile: https://superfile.netlify.app/
