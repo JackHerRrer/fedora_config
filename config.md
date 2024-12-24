@@ -181,6 +181,7 @@ Its a wine GUI
 
 ### Add minimize / maximize button
 ```bash
+# Add minimize / maximize button
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 ```
 ### Plugins
