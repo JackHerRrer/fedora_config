@@ -19,6 +19,19 @@ In `/etc/dnf/dnf.conf` add:
 fastestmirror=True
 ```
 
+## Video config
+
+https://discussion.fedoraproject.org/t/proprietary-video-codecs-are-no-longer-hardware-accelerated-by-default-on-amd-gpus-since-fedora-37/73723
+```
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
+sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
+```
+
 ## Terminal configuration
 ### Terminal emulator
 ```bash
@@ -169,6 +182,17 @@ source ~/.config/fish/config.fish
 - ublock origin
 - Google Search Maps Button
 
+### Hardware acceleration
+not 100% sure
+https://bbs.archlinux.org/viewtopic.php?id=281398
+```
+about:config
+media.hardware-video-decoding.force-enabled=true
+
+about:support
+```
+
+
 ## VsCode
 https://code.visualstudio.com/docs/setup/linux
 
@@ -179,19 +203,13 @@ Its a wine GUI
 
 ## Gnome
 
-### Add minimize / maximize button
+### beahvior changes
 ```bash
 # Add minimize / maximize button
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-```
-### Plugins
-Install the `extension manager`
 
-Add the following plugins:
-```
-- clipboard indicator
-- Tiling assistant
-- Dash to panel
+# Remove 60s cooldown before halt
+gsettings set org.gnome.SessionManager logout-prompt false 
 ```
 
 ### Hotkeys
@@ -200,6 +218,21 @@ Setting -> keyboards -> customize hotkeys
 ```
 navigation -> go to workspace on the right: ctrl + super + right
 navigation -> go to workspace on the left: ctrl + super + left
+```
+
+### DNS
+Find fastest DNS first: [dnsspeedtest](https://dnsspeedtest.online/)
+Setting -> network -> "gear" button -> IPv4 -> DNS
+
+### Plugins
+Install the `extension manager`
+
+Add the following plugins:
+```
+- clipboard indicator
+- Tiling assistant
+- Dash to panel
+- Bring Out Submenu Of Power Off Button
 ```
 
 #### Dash to panel configuration 
@@ -219,6 +252,10 @@ comportement
     afficher les apercu de fenêtre lors du survol
         taille des prévisualisation de fenêtre -> 500
     Isoler les espaces de travail
+
+#### Bring Out Submenu Of Power Off Button configuration
+    disable all buttons except power off and restart
+
 
 ## Wallpaper
 https://backiee.com/static/wallpapers/7680x4320/219980.jpg
@@ -243,6 +280,10 @@ https://backiee.com/static/wallpapers/7680x4320/219980.jpg
     - copy the jackett's api key
     - add the api key of jackett in qbitorrent conf `~/.var/app/org.qbittorrent.qBittorrent/data/qBittorrent/nova3/engines/jackett.json`
 
+    TODO: how to update jackett
+
+## Messenger replacement : Caprine
+Install caprine to replace messenger
 
 ## To be explored
 - pager : most/bat
